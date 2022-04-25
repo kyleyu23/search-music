@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: white;
+  min-height: 100vh;
+}
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-bar,
+form button {
+  padding: 0.25rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+form button {
+  color: white;
+  background: rgba(9, 9, 121, 1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  color: rgba(9, 9, 121, 1);
+  background: white;
+}
+.albumlist,
+.album-container {
+  /* border: 1px solid green; */
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.albumlist {
+  flex-wrap: wrap;
+}
+.album-container {
+  /* border: 1px solid purple; */
+
+  flex-direction: column;
+  gap: 0.5rem 0.5rem;
+
+  height: 200px;
+  width: 200px;
+}
+.album-container h3 {
+  /* border: 1px solid green; */
+  text-align: center;
+  max-width: 90%;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  white-space: nowrap;
+}
