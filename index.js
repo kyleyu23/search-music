@@ -96,20 +96,23 @@ const Controller = ((model, view) => {
 
       if (!searchBar.value) return;
 
-      model.getAlbums(searchBar.value).then((data) => {
-        searchBar.value = "";
+      model
+        .getAlbums(searchBar.value)
+        .then((data) => {
+          searchBar.value = "";
 
-        const albums = data.results;
+          const albums = data.results;
 
-        state.albumlist = [];
+          state.albumlist = [];
 
-        albums.forEach((album) => {
-          const albumTitle = album.collectionName ?? "Album Name";
-          const albumImgUrl = album.artworkUrl100 ?? "Image";
-          const newalbum = new model.Album(albumTitle, albumImgUrl);
-          state.albumlist = [newalbum, ...state.albumlist];
-        });
-      });
+          albums.forEach((album) => {
+            const albumTitle = album.collectionName ?? "Album Name";
+            const albumImgUrl = album.artworkUrl100 ?? "Image";
+            const newalbum = new model.Album(albumTitle, albumImgUrl);
+            state.albumlist = [newalbum, ...state.albumlist];
+          });
+        })
+        .catch((err) => console.log(err));
     });
   };
 
